@@ -19,5 +19,5 @@ for (let i = 0; i < len - 1; i++) {
     const [r, g, b] = rgbNumbers.split(',').map(val => parseInt(val.trim()));
     alert(rgbToHex(r, g, b));
     elem.innerText = rgbToHex(r, g, b).toString();
-    window.getComputedStyle(elem).fontSize = 100;
+    window.getComputedStyle(elem).fontSize = 'x-large';
 }
