@@ -18,6 +18,7 @@ for (let i = 0; i < len - 1; i++) {
     const rgbNumbers = bg.slice(4, -1);
     const [r, g, b] = rgbNumbers.split(',').map(val => parseInt(val.trim()));
     alert(rgbToHex(r, g, b));
-    elem.innerText = rgbToHex(r, g, b).toString();
-    window.getComputedStyle(elem).fontSize = 'x-large';
+    let parInDiv = document.getElementById(i + 1 + "." + 1);
+    parInDiv.innerText = rgbToHex(r, g, b).toString();
+    parInDiv = window.getComputedStyle(elem).fontSize = 'x-large';
 }
