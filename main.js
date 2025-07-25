@@ -2,7 +2,7 @@ const componentToHex = (e) => {
     const hex = e.toString(16);
     return hex.length == 1 ? "0" + hex : hex;
 }
-
+let a = 0;
 const rgbToHex = (r, g, b) => {
     return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
