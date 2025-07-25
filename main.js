@@ -12,7 +12,7 @@ let a = 0;
 // }
 const len = document.getElementsByClassName('color-block').length;
 
-for (let i = 0; i < len - 1; i++) {
+for (let i = 0; i < len; i++) {
     let elem = document.getElementById(i + 1);
     const bg = window.getComputedStyle(elem).backgroundColor;
     const rgbNumbers = bg.slice(4, -1);
@@ -21,4 +21,5 @@ for (let i = 0; i < len - 1; i++) {
     let parInDiv = document.getElementById(i + 1 + "." + 1);
     parInDiv.innerText = rgbToHex(r, g, b).toString();
     parInDiv = window.getComputedStyle(elem).fontSize = 'x-large';
+    document.getElementsByClassName("hash-code").innerText = rgbToHex(r, g, b).toString();
 }
