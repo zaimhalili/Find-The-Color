@@ -6,7 +6,7 @@ const componentToHex = (e) => {
 const rgbToHex = (r, g, b) => {
     return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
-
+let a = 0;
 // generateColors = () => {
 
 // }
