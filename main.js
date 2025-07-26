@@ -8,9 +8,10 @@ const rgbToHex = (r, g, b) => {
 }
 
 generateColors = () => {
-    const [r, g, b] = Math.random(0, 256);
+    let newR = Math.floor(Math.random() * 255), newG = Math.floor(Math.random() * 255), newB = Math.floor(Math.random() * 255);
     let newColor = document.getElementById('color-test');
-    newColor.innerText = "Hello"
+    const hexNewColor = rgbToHex(newR, newG, newB);
+    newColor.style.backgroundColor = hexNewColor;
 }
 
 
@@ -23,12 +24,13 @@ for (let i = 0; i < len - 1; i++) {
     const [r, g, b] = rgbNumbers.split(',').map(val => parseInt(val.trim()));
 
     const hex = rgbToHex(r, g, b);
-    const comp = rgbToHex(255 - r, 255 - g, 255 - b);
+
+    //complementary-colored text
+    // const comp = rgbToHex(255 - r, 255 - g, 255 - b);
+    // colorPar[i].style.color = comp;
     
     const colorPar = document.getElementsByClassName('hash-code');
 
     colorPar[i].innerText = hex;
-    
-    colorPar[i].style.color = comp;
 }
 
