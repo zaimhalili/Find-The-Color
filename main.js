@@ -7,9 +7,11 @@ const rgbToHex = (r, g, b) => {
     return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
 
-// generateColors = () => {
-
-// }
+generateColors = () => {
+    const [r, g, b] = Math.random(0, 256);
+    let newColor = document.getElementById('color-test');
+    newColor.innerText = "Hello"
+}
 
 
 const len = document.getElementsByClassName('color-block').length;
