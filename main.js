@@ -12,6 +12,8 @@ generateColors = () => {
     let newColor = document.getElementById('color-test');
     const hexNewColor = rgbToHex(newR, newG, newB);
     newColor.style.backgroundColor = hexNewColor;
+
+    document.getElementById('generate-colors-hex').innerText = hexNewColor;
 }
 
 
@@ -34,7 +36,6 @@ for (let i = 0; i < len; i++) {
     colorPar[i].innerText = hex;
 }
 
-createBlock() = () => {
-    alert("works fine");
+createBlock = () => {
+    alert("Create new Block")
 }
-
