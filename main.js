@@ -17,7 +17,7 @@ generateColors = () => {
 
 const len = document.getElementsByClassName('color-block').length;
 
-for (let i = 0; i < len - 1; i++) {
+for (let i = 0; i < len; i++) {
     let elem = document.getElementById("b" + (i + 1));
     const bg = window.getComputedStyle(elem).backgroundColor;
     const rgbNumbers = bg.slice(4, -1);
@@ -28,9 +28,13 @@ for (let i = 0; i < len - 1; i++) {
     //complementary-colored text
     // const comp = rgbToHex(255 - r, 255 - g, 255 - b);
     // colorPar[i].style.color = comp;
-    
+
     const colorPar = document.getElementsByClassName('hash-code');
 
     colorPar[i].innerText = hex;
+}
+
+createBlock() = () => {
+    alert("works fine");
 }
 
