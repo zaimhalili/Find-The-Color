@@ -7,7 +7,7 @@ const rgbToHex = (r, g, b) => {
     return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
 
-generateColors = () => {
+function generateColors(){
     let newR = Math.floor(Math.random() * 255), newG = Math.floor(Math.random() * 255), newB = Math.floor(Math.random() * 255);
     let newColor = document.getElementById('color-test');
     const hexNewColor = rgbToHex(newR, newG, newB);
@@ -16,39 +16,40 @@ generateColors = () => {
     document.getElementById('generate-colors-hex').innerText = hexNewColor;
 }
 
+const lenColorBlocks = document.getElementsByClassName('color-block').length;
+const colorPar = document.getElementsByClassName('hash-code');
 
-const len = document.getElementsByClassName('color-block').length;
-
-for (let i = 0; i < len; i++) {
+for (let i = 0; i < lenColorBlocks; i++) {
     let elem = document.getElementById("b" + (i + 1));
     const bg = window.getComputedStyle(elem).backgroundColor;
     const rgbNumbers = bg.slice(4, -1);
     const [r, g, b] = rgbNumbers.split(',').map(val => parseInt(val.trim()));
 
     const hex = rgbToHex(r, g, b);
-
     //complementary-colored text
     // const comp = rgbToHex(255 - r, 255 - g, 255 - b);
     // colorPar[i].style.color = comp;
-
-    const colorPar = document.getElementsByClassName('hash-code');
-
     colorPar[i].innerText = hex;
 }
 
 document.body.onload = createBlock;
 
-createBlock = () => {
+function createBlock() {
+    const len = document.getElementsByClassName('color-block').length;
     const newColorDiv = document.createElement("div");
+    newColorDiv.id = "b" + len;
+    newColorDiv.className = "color-block";
 
-    // and give it some content
-    // const newContent = document.createTextNode("Hi there and greetings!");
+    newColorDiv.innerHTML = `<p class="hash-code">#new</p>`;
+    newColorDiv.style.backgroundColor = "#ccc"; // give it a visible default
 
-    // add the text node to the newly created div
-    // newColorDiv.appendChild(newContent);
-
-    // add the newly created element and its content into the DOM
-    const currentDiv = document.getElementById("b" + (len - 1));
-    currentDiv.classList.add("color-block");
-    document.body.insertBefore(newColorDiv, currentDiv);
+    const colorsContainer = document.querySelector('.colors');
+    colorsContainer.insertBefore(newColorDiv, colorsContainer.lastElementChild);
 }
+
+
+//duhet e para
+//sa color-block kena, pa llogarit butonat -> lenColorBlock - 1
+//me pjestu 100% me lenColorBlock - 1 ose me id = 1 - 9 me for-loop
+//me ndryshu width-in e lenColorBlock - 1
+

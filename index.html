@@ -37,20 +37,23 @@
         <div class="color-block" id="b9">
             <p class="hash-code">#param</p>
         </div>
-        <div class="color-block">
-            <button type="button" onclick="generateColors()" class="generate-button" id="color-test">
+        <div class="buttons-container" id="buttons-container">
+            <div class="generate-colors-container" id="color-test">
                 <p class="generate-colors-text">Generate Colors</p>
-                <p class="generate-colors-hex" id="generate-colors-hex">
-                </p>
-            </button>
+                <p class="generate-colors-hex" id="generate-colors-hex"></p>
+                <button type="submit" onclick="generateColors()" class="create-random-color-button">New Color</button>
+            </div>
 
-            <button type="button" onclick="createBlock()" class="create-block" id="create-block">
+            <div class="create-block" id="create-block">
                 <p class="create-block-text">
-                    Create Block
+                    Create New Block <br>
+                    Choose Color
                 </p>
-            </button>
+
+                <input type="color" id="favcolor" name="favcolor" value="#ff0000">
+                <button type="submit" onclick="createBlock()" class="create-random-color-button">Submit</button>
+            </div>
         </div>
-        </button>
     </div>
 
     <script src="main.js"></script>
