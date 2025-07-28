@@ -93,7 +93,7 @@ button {
     text-align: center;
     flex-direction: column;
     flex-wrap: wrap;
-    
+
 }
 
 .generate-colors-container {
@@ -138,7 +138,7 @@ button {
     transform: scale(1.1) translateY(-5px);
 }
 
-.create-random-color-button{
+.create-random-color-button {
     width: 140px;
     height: 45px;
     background-color: rgb(255, 248, 235);
@@ -180,7 +180,7 @@ button {
 
 .color-block:hover .hash-code {
     opacity: 1;
-    transform: scale(1.2) translateY(-5px);
+    transform: scale(1.1) translateY(-5px);
 }
 
 .create-block {
@@ -202,11 +202,6 @@ button {
     font-weight: lighter;
     background-color: rgb(77, 79, 90);
     transition: 0.3s;
-}
-
-.create-block:hover {
-    transform: scale(1.1) translateY(-5px);
-    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.8);
 }
 
 .create-block-text {

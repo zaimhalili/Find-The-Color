@@ -19,6 +19,33 @@ function generateColors(){
 const lenColorBlocks = document.getElementsByClassName('color-block').length;
 const colorPar = document.getElementsByClassName('hash-code');
 
+document.body.onload = createBlock;
+
+function createBlock() {
+    const len = document.getElementsByClassName('color-block').length;
+    const newColorDiv = document.createElement("div");
+    newColorDiv.id = "b" + len;
+    newColorDiv.className = "color-block";
+
+    newColorDiv.innerHTML = `<p class="hash-code">New Color</p>`;
+
+    const colorPicker = document.getElementById("chosen-color");
+    const selectedColor = colorPicker.value;
+    console.log(selectedColor);
+    newColorDiv.style.backgroundColor = selectedColor; // give it a visible default
+
+    const colorsContainer = document.querySelector('.colors');
+    colorsContainer.insertBefore(newColorDiv, colorsContainer.lastElementChild);
+}
+
+
+//duhet e para
+//sa color-block kena, pa llogarit butonat -> lenColorBlock - 1
+//me pjestu 100% me lenColorBlock - 1 ose me id = 1 - 9 me for-loop
+//me ndryshu width-in e lenColorBlock - 1
+
+
+
 for (let i = 0; i < lenColorBlocks; i++) {
     let elem = document.getElementById("b" + (i + 1));
     const bg = window.getComputedStyle(elem).backgroundColor;
@@ -31,25 +58,4 @@ for (let i = 0; i < lenColorBlocks; i++) {
     // colorPar[i].style.color = comp;
     colorPar[i].innerText = hex;
 }
-
-document.body.onload = createBlock;
-
-function createBlock() {
-    const len = document.getElementsByClassName('color-block').length;
-    const newColorDiv = document.createElement("div");
-    newColorDiv.id = "b" + len;
-    newColorDiv.className = "color-block";
-
-    newColorDiv.innerHTML = `<p class="hash-code">#new</p>`;
-    newColorDiv.style.backgroundColor = "#ccc"; // give it a visible default
-
-    const colorsContainer = document.querySelector('.colors');
-    colorsContainer.insertBefore(newColorDiv, colorsContainer.lastElementChild);
-}
-
-
-//duhet e para
-//sa color-block kena, pa llogarit butonat -> lenColorBlock - 1
-//me pjestu 100% me lenColorBlock - 1 ose me id = 1 - 9 me for-loop
-//me ndryshu width-in e lenColorBlock - 1
 
