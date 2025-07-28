@@ -2,8 +2,7 @@ body {
     height: 100vh;
     background-color: transparent;
     display: flex;
-    width: fit-content;
-    justify-content: center;
+    width: 100w;
     background-color: rgb(31, 31, 31);
     overflow-x: hidden;
     overflow-y: hidden;
@@ -19,6 +18,8 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0;
+    overflow-x: hidden;
+
 }
 
 .color-block {
